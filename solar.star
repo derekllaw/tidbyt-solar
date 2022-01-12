@@ -7,7 +7,7 @@ NOW = 'var webdata_now_p = "'
 TODAY = 'var webdata_today_e = "'
 
 def main():
-    rep = http.get(DATALOGGER_URL)
+    rep = http.get(DATALOGGER_URL,auth=('admin','admin'))
     if rep.status_code!=200:
         fail("Data Logger fail %d",rep.status_code)
     
